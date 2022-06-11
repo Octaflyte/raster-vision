@@ -30,10 +30,6 @@ ENV GDAL_DATA=/opt/conda/lib/python3.7/site-packages/rasterio/gdal_data/
 
 WORKDIR /opt/src/
 
-# needed for jupyter lab extensions
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash - && \
-    apt-get install -y nodejs
-
 COPY ./requirements-dev.txt /opt/src/requirements-dev.txt
 RUN pip install -r requirements-dev.txt
 
@@ -98,5 +94,9 @@ COPY ./rastervision_core/ /opt/src/rastervision_core/
 COPY ./rastervision_pytorch_learner/ /opt/src/rastervision_pytorch_learner/
 COPY ./rastervision_pytorch_backend/ /opt/src/rastervision_pytorch_backend/
 COPY ./rastervision_gdal_vsi/ /opt/src/rastervision_gdal_vsi/
+COPY ./app /opt/src/app/
 
-CMD ["bash"]
+WORKDIR /opt/src/app/
+
+EXPOSE 5000
+CMD [ "python3", "app.py"]

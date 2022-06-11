@@ -14,3 +14,4 @@ jupyter==1.*
 jupyterlab==3.*
 jupyter_contrib_nbextensions==0.5.*
 protobuf==3.20.*
+flask==2.1.*
