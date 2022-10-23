@@ -10,7 +10,7 @@ cython==0.29.*
 pycocotools==2.0.*
 future==0.18.*
 psutil==5.9.*
-triangle==20200424
+triangle==20220202
 opencv-python==4.1.*
 opencv-python-headless<4.3
 matplotlib==3.5.*
